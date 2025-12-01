@@ -1,0 +1,7 @@
+.nav{
+  font-size: 30px;
+  font-weight: bolder;
+  li{
+        padding: 0 20px; 
+  }
+}
