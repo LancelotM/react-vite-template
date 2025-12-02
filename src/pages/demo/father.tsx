@@ -1,6 +1,8 @@
 import { Box } from "@radix-ui/themes"
-import { useEffect, useLayoutEffect } from "react"
+import { Suspense, useEffect, useLayoutEffect } from "react"
 import Child from "./childDetail"
+import ChildUseTransition from "./childUseTransition"
+import ChildSuspense from "./childSuspense"
 
 export default () => {
 
@@ -15,6 +17,14 @@ export default () => {
 
   return <Box>
     father
-    <Child />
+    <Child/>
+    <ChildUseTransition/>
+    <Suspense fallback={<Loading/>}>
+      <ChildSuspense/>
+    </Suspense>
   </Box>
+}
+
+function Loading() {
+  return <h2>🌀 Loading...</h2>;
 }
