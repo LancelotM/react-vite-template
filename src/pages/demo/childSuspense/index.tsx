@@ -1,19 +1,14 @@
 import { Box, Button } from "@radix-ui/themes"
-import { use, useCallback, useEffect, useLayoutEffect, useState } from "react"
-
-const hanleClick = async ()=>{
-  await new Promise(resolve => {
-    setTimeout(resolve, 2000);
-  });
-  console.log('等了2s之后了');
-  // return []
-}
+import { Suspense, use, useEffect, useLayoutEffect, useState } from "react"
+import { fetchData } from "./data";
 
 export default () => {
-  // const [ val, setVal ] = useState('init');
-  const useVal = use(hanleClick());
+  const [show, setShow] = useState(false);
+  function download() {
+    setShow(true);
+  }
 
-  console.log('useVal',useVal);
+  console.log('show',show);
 
   useEffect(()=>{
     console.log(`${new URL(import.meta.url).pathname}-useEffect`)
@@ -25,8 +20,23 @@ export default () => {
 
   return <Box>
     childSuspense
-    {/* <Button onClick={hanleClick}>clickLoad</Button> */}
-    {/* <Box>staue{val}</Box> */}
-    <Box>use{useVal}</Box>
+    {
+      show?
+      <Suspense fallback={<Loading/>}>
+        <UseMessage/>
+      </Suspense>:
+      <Button onClick={download}>clickLoad</Button>
+    }
   </Box>
+}
+
+
+function UseMessage() {
+  const useVal = use(fetchData('useVal'));
+  console.log('useVal',useVal);
+  return <p>Here is the use message: {useVal}</p>;
+}
+
+function Loading() {
+  return <h2>🌀 Loading...</h2>;
 }
