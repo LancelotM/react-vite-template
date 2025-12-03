@@ -3,6 +3,7 @@ import { useEffect, useLayoutEffect } from "react"
 import Child from "./childDetail"
 import ChildUseTransition from "./childUseTransition"
 import ChildSuspense from "./childSuspense"
+import ChildUseDeferredValue from "./childUseDeferredValue"
 
 export default () => {
 
@@ -20,5 +21,6 @@ export default () => {
     <Child/>
     <ChildUseTransition/>
     <ChildSuspense/>
+    <ChildUseDeferredValue/>
   </Box>
 }
