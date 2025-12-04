@@ -37,6 +37,3 @@ function UseMessage() {
   return <p>Here is the use message: {useVal}</p>;
 }
 
-function Loading() {
-  return <h2>🌀 Loading...</h2>;
-}

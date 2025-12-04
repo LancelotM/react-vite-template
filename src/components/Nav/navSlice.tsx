@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const navSlice = createSlice({
   name: "nav",
   initialState: {
-    navTabVal:'home',
+    navTabVal:window.location.pathname||'/',
   },
   reducers: {
     changeNavTabVal(state, action) {

@@ -4,18 +4,23 @@ import './index.css'
 import { useNavigate } from "react-router";
 import { store } from "@/store";
 import { changeNavTabVal } from "./navSlice";
+import {  useLayoutEffect } from "react";
 
 
 export default () =>{
   const navigate = useNavigate();
 
+  useLayoutEffect(()=>{
+    console.log('useEffect-nav');
+  },[])
+
   return <Tabs.Root defaultValue={store.getState().navSlice.navTabVal}>
     <Tabs.List justify='center' className="nav" >
       {
         routerArr.map((route)=>{
-          return route.tabName && <Tabs.Trigger key={route.tabName} value={route.tabName}
+          return route.path && <Tabs.Trigger key={route.path} value={route.path}
             onClick={()=>{
-              store.dispatch(changeNavTabVal({navTabVal:route.tabName}))
+              store.dispatch(changeNavTabVal({navTabVal:route.path}))
               navigate(route.path, { preventScrollReset: true });
             }}>
           {route.tabName}
