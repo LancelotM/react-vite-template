@@ -6,6 +6,7 @@ import viteLogo from '/public/vite.svg'
 import { homeRoute } from "@/pages/home/route";
 import { demoRoute } from "@/pages/demo/route";
 import { childDetailRoute } from "@/pages/demo/childDetail/route";
+import { handleRoute } from "@/pages/handle/route";
 
 export function NotFindEle() {
   const [count, setCount] = useState(0)
@@ -38,6 +39,7 @@ export const routerArr = [
   homeRoute,
   demoRoute,
   childDetailRoute,
+  handleRoute,
 ]
 
 export const router = createBrowserRouter(routerArr.map((item)=>{
