@@ -1,7 +1,8 @@
 import Nav from "@/components/Nav"
 import { Box, Tabs } from "@radix-ui/themes"
-import { useEffect, useLayoutEffect, useState } from "react"
+import { useEffect, useLayoutEffect } from "react"
 import HandleRedux from "./handleRedux"
+import HandleUseEffect from "./handleUseEffect"
 
 const handleArr = [
   {
@@ -13,16 +14,8 @@ const handleArr = [
     Component:<></>,
   },
   {
-    key:'useEffect',
-    Component:<></>,
-  },
-  {
-    key:'useLayoutEffect',
-    Component:<></>,
-  },
-  {
-    key:'useState',
-    Component:<></>,
+    key:'useEffect&useLayoutEffect&useState',
+    Component:<HandleUseEffect />,
   },
 ]
 

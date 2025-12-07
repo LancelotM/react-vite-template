@@ -19,7 +19,7 @@ export function createStore(reducer, initialState) {
     };
   }
 
-  dispatch({ type: '@@INIT' }); // 初始化
+  // dispatch({ type: '@@INIT' }); // 初始化
 
   return { getState, dispatch, subscribe };
 }
