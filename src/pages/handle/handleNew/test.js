@@ -16,7 +16,7 @@ Parent.prototype.sayName = function () {
     console.log('sayName',this.name);
 };
 
-console.log('Parent.prototype.sayName()',Parent.prototype.sayName()); //undefined
+Parent.prototype.sayName() //undefined
 
 //创建实例，将构造函数Parent与形参作为参数传入
 const child = newMethod(Parent, 'echo', 26);
@@ -31,3 +31,29 @@ console.log(child.hasOwnProperty('age'))//true
 console.log(child.hasOwnProperty('sayName'))//false
 console.log(child.hasOwnProperty('sayName2'))//true
 console.log(child.hasOwnProperty('sayName3'))//true
+
+/**
+ * ES6相关的
+ */
+const obj = {
+  name:'ming',
+  sayHi1:()=>{ //箭头函数中this指向对象调用时的this，需要看运行环境
+    console.log(this?this.name:undefined);
+  },
+  sayHi2(){
+    console.log(this.name);
+  },
+  sayHi3:function(){
+    console.log(this.name);
+  },
+  sayHi4(){
+    (()=>{
+      console.log(this.name);
+    })()
+  },
+}
+
+obj.sayHi2() //ming
+obj.sayHi3() //ming
+obj.sayHi4() //ming
+obj.sayHi1() //''或者undefined

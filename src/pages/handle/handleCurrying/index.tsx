@@ -1,5 +1,6 @@
 import { Box } from "@radix-ui/themes"
 import { curry } from "./method.js";
+// import './test.js'
 
 export default ()=> {
 
