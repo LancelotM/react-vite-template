@@ -3,18 +3,32 @@ import { Box, Tabs } from "@radix-ui/themes"
 import { useEffect, useLayoutEffect } from "react"
 import HandleRedux from "./handleRedux"
 import HandleUseEffect from "./handleUseEffect"
+import HandlePromise from "./handlePromise"
 
 const handleArr = [
   {
+    key:'Currying',
+    tabName:'柯里化',
+    Component:<HandlePromise/>,
+  },
+  {
+    key:'Promise',
+    tabName:'Promise',
+    Component:<HandlePromise/>,
+  },
+  {
     key:'Redux',
+    tabName:'Redux',
     Component:<HandleRedux/>,
   },
   {
     key:'MobX',
+    tabName:'MobX',
     Component:<></>,
   },
   {
     key:'useEffect&useLayoutEffect&useState',
+    tabName:'手写useEffect等',
     Component:<HandleUseEffect />,
   },
 ]
@@ -31,11 +45,11 @@ export default () => {
   return <Box>
     <Nav/>
     手写的一些方法以及应用
-    <Tabs.Root defaultValue={'Redux'}>
+    <Tabs.Root >
       <Tabs.List>
         {
           handleArr.map((handle)=>{
-            return <Tabs.Trigger key={`Trigger-${handle.key}`} value={handle.key}>{handle.key}</Tabs.Trigger>
+            return <Tabs.Trigger key={`Trigger-${handle.key}`} value={handle.key}>{handle.tabName}</Tabs.Trigger>
           })
         }
       </Tabs.List>
