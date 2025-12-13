@@ -22,5 +22,5 @@ async function getAlbums() {
     setTimeout(resolve, 2000);
   });
   console.log('2s之后');
-  return 'success';
+  return 'success get data';
 }

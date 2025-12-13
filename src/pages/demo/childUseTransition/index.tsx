@@ -16,7 +16,7 @@ export default () => {
   const hanleClick = useCallback(()=>{
     return new Promise((resolve)=>{
       setTimeout(() => {
-        resolve('changeing')
+        resolve('success')
       }, 2000);
     })
   },[])
@@ -24,11 +24,10 @@ export default () => {
   return <Box>
     childSuspense
     <Button disabled={isPending} onClick={()=>{
+      setVal('changeing')
       startTransition(async ()=>{
         await hanleClick()
-        // startTransition(() => {
-          setVal('changeed')
-        // })    
+        setVal('changeed')
       })
     }}>clickLoad</Button>
     <Box>{val}</Box>

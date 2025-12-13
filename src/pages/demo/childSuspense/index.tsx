@@ -1,6 +1,7 @@
 import { Box, Button } from "@radix-ui/themes"
 import { Suspense, use, useEffect, useLayoutEffect, useState } from "react"
 import { fetchData } from "./data";
+import Loading from "@/components/Loading";
 
 export default () => {
   const [show, setShow] = useState(false);
