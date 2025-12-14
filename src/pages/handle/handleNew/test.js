@@ -25,6 +25,7 @@ child.sayName2() //'echo';
 child.sayName3() //'echo';
 
 //最后检验，与使用new的效果相同
+console.log('child.__proto__',child.__proto__ === Parent.prototype)//true
 console.log(child instanceof Parent)//true
 console.log(child.hasOwnProperty('name'))//true
 console.log(child.hasOwnProperty('age'))//true
@@ -57,3 +58,50 @@ obj.sayHi2() //ming
 obj.sayHi3() //ming
 obj.sayHi4() //ming
 obj.sayHi1() //''或者undefined
+
+
+function Parent1() {
+  this.name = ["echo", "时间跳跃", "听风是风"];
+};
+
+Parent1.prototype.say = function() {
+  console.log(this.name);
+};
+
+let parent = new Parent1();
+function Child1() {};
+
+Child1.prototype = parent;
+
+let kid = new Child1();
+
+function Son1() {
+  Parent1.call(this);
+};
+
+let son = new Son1();
+parent.name.push('二狗子');
+son.name.push('狗剩');
+kid.name.push('狗蛋');
+console.log(parent.name);// [ 'echo', '时间跳跃', '听风是风', '二狗子', '狗蛋' ]
+console.log(son.name);// [ 'echo', '时间跳跃', '听风是风', '狗剩' ]
+console.log(kid.name);// [ 'echo', '时间跳跃', '听风是风', '二狗子', '狗蛋' ]
+console.log('Child1.prototype:',Child1.prototype);// Parent1 { name: [ 'echo', '时间跳跃', '听风是风', '二狗子', '狗蛋' ] }
+let parent1 = new Parent1();
+let kid1 = new Child1();
+console.log(parent1.name);// [ 'echo', '时间跳跃', '听风是风' ]
+console.log(kid1.name);// [ 'echo', '时间跳跃', '听风是风', '二狗子', '狗蛋' ]
+
+function Parent2(name) {
+  this.name = name || "Adam";
+};
+Parent2.prototype.say = function () {
+  console.log(this.name);
+};
+function Child2 (name) {
+  // Parent2.apply(this,arguments);
+  Parent2.call(this,...arguments);
+};
+let kid2 = new Child2('Patrick');
+console.log(kid2)// Child2 { name: 'Patrick' }
+console.log(kid2.name)// Patrick

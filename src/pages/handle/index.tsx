@@ -4,12 +4,27 @@ import { useEffect, useLayoutEffect } from "react"
 import HandleRedux from "./handleRedux"
 import HandleUseEffect from "./handleUseEffect"
 import HandlePromise from "./handlePromise"
+import HandleCurrying from "./handleCurrying"
+import HandleClosures from "./handleClosures"
+import HandleNew from "./handleNew"
+
+const defaultValue = 'Closures'
 
 const handleArr = [
   {
+    key:'New',
+    tabName:'New',
+    Component:<HandleNew/>,
+  },
+  {
+    key:'Closures',
+    tabName:'闭包',
+    Component:<HandleClosures/>,
+  },
+  {
     key:'Currying',
     tabName:'柯里化',
-    Component:<HandlePromise/>,
+    Component:<HandleCurrying/>,
   },
   {
     key:'Promise',
@@ -45,7 +60,7 @@ export default () => {
   return <Box>
     <Nav/>
     手写的一些方法以及应用
-    <Tabs.Root >
+    <Tabs.Root defaultValue={defaultValue}>
       <Tabs.List>
         {
           handleArr.map((handle)=>{
