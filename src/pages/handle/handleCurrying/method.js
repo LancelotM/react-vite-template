@@ -6,11 +6,11 @@
  */
 const curry = (fn,...outerArgs)=>{
   return (...innerArgs) => {
-    let allArgs = [...outerArgs,...innerArgs];
-    if(allArgs.length < fn.length){
-      return curry(fn,...allArgs)
+    let allArgsArr = [...outerArgs,...innerArgs];
+    if(allArgsArr.length < fn.length){
+      return curry(fn,...allArgsArr)
     }
-    return fn.apply(this,allArgs)
+    return fn.apply(this,allArgsArr)
   }
 }
 

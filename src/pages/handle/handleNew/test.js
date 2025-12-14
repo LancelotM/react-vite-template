@@ -105,3 +105,49 @@ function Child2 (name) {
 let kid2 = new Child2('Patrick');
 console.log(kid2)// Child2 { name: 'Patrick' }
 console.log(kid2.name)// Patrick
+
+/** var会穿透块级作用域 */
+{
+  var v = 10;
+  let l = 20;
+}
+console.log(v); //10
+// console.log(l); //报错没有被定义
+
+let varArr = [];
+for (var varIndex = 0; varIndex < 5; varIndex++) {
+  varArr[varIndex] = function(){
+    console.log(varIndex);
+  }
+}
+console.log('varIndex2',varIndex2);// undefined
+for (var varIndex2 = 0; varIndex2 < varArr.length; varIndex2++) {
+  varArr[varIndex2]() //5个5
+}
+console.log('varIndex',varIndex);// 5
+console.log('varIndex2',varIndex2);// 5
+
+let letArr = [];
+for (let letIndex = 0; letIndex < 5; letIndex++) {
+  letArr[letIndex] = function(){
+    console.log(letIndex);
+  }
+}
+// console.log('letIndex2',letIndex2);// 报错没有被定义
+for (let letIndex2 = 0; letIndex2 < letArr.length; letIndex2++) {
+  letArr[letIndex2]() //5个5
+}
+// console.log('letIndex',letIndex);// 报错没有被定义
+// console.log('letIndex2',letIndex2);// 报错没有被定义
+/** var不能穿透函数作用域 */
+function init() {
+  var haha = "Mozilla"; // name 是 init 创建的局部变量
+}
+// console.log(haha) //报错没有被定义
+
+/** */
+let a = {n:1};
+const obj1 = {a};
+a= {n:2}; // 不会改变
+// a.n++; // 会改变
+console.log(obj1.a.n);
