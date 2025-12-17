@@ -8,7 +8,7 @@ import HandleCurrying from "./handleCurrying"
 import HandleClosures from "./handleClosures"
 import HandleNew from "./handleNew"
 
-const defaultValue = 'Closures'
+const defaultValue = 'Promise'
 
 const handleArr = [
   {

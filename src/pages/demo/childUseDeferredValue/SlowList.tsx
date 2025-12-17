@@ -7,7 +7,7 @@ type SlowListType = SlowItemType & {
 }
 
 let allItems: any[] = [];
-let loaded = false;
+// let loaded = false;
 const SlowList = memo(function SlowList({ text }:SlowListType) {
   // render一次。实际的减速是在 SlowItem 组件内部。
   const [isRender,setIsRender] = useState<boolean>(false)
@@ -15,7 +15,7 @@ const SlowList = memo(function SlowList({ text }:SlowListType) {
   console.log('[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />-isRender',isRender);
 
   const addItems = useCallback(()=>{
-    loaded = true;
+    // loaded = true;
     const _items = []
     for (let i = 0; i < (allItems.length + 100); i++) {
       _items.push(<SlowItem key={i} text={text} />);

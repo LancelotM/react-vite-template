@@ -44,9 +44,9 @@ const useLayoutEffectCommon = (callback:()=>void,deps:any[],isLayout:boolean) =>
     isLayout ?
     layoutEffects.push({ callback, index: currentIndex }):
     passiveEffects.push({ callback, index: currentIndex });
+    // 保存依赖
+    hookStatesMap.set(currentIndex,deps); 
   }
-  // 保存依赖
-  hookStatesMap.set(currentIndex,deps); 
   hookIndex++;
 }
 
@@ -78,7 +78,7 @@ const render = () => {
       if (cleanup && typeof cleanup === "function") cleanup();
       hookStatesMap.set(e.index + "_cleanup",e.callback());
     });
-  });
+  },0);
 }
 
 const HandleApp = ()=> {

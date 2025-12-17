@@ -10,7 +10,9 @@ export default defineConfig({
     }
   },
   assetsInclude: ['**/*.gltf'],
-  plugins: [react()],
+  plugins: [
+    react(),
+  ],
   css: {
     modules: {
         // css模块化 文件以.module.[css|less|scss]结尾
