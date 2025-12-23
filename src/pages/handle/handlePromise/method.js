@@ -120,7 +120,20 @@ export {
 
 // const p = new MyPromise((resolve , reject)=>{
 //   setTimeout(()=>{
+//     console.log('2s后');
 //     resolve('change')
 //     reject('failed')
 //   },2000)
+// })
+
+// p.then((val)=>{
+//   console.log('p.then',val);
+//   return 'then return'
+// },(err)=>{
+//   console.log('p.err',err);
+// }).then((val)=>{
+//   console.log('p.then1',val);
+//   return 'then1 return'
+// }).finally((final)=>{
+//   console.log('finally',final);
 // })

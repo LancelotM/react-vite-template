@@ -18,11 +18,9 @@ export default ()=> {
     // const p1 = p.then(123)
 
     p.then((result:any)=>{
-      1123
       setVal(result)
       console.log('成功',result);
     },(result:any)=>{
-      1123
       setVal(result)
       console.log('失败',result);
     })

@@ -82,6 +82,9 @@ const render = () => {
 }
 
 const HandleApp = ()=> {
+  /** 这里正常不用重制 */
+  hookIndex = 0;
+  
   // console.log('hookStatesMap',hookStatesMap);
   const [count,setCount] = useState(0);
   const [val,setVal] = useState(10);
@@ -102,17 +105,8 @@ const HandleApp = ()=> {
 
   useEffect(()=>{
     console.log('useEffect-首次渲染');
-    // 自动递增用于观察效果
-    // const id1 = setInterval(() => {
-    //   setCount((count: any)=>count + 1);
-    // }, 3000);
-    // const id2 = setInterval(() => {
-    //   setVal((val: any)=>val + 1);
-    // }, 2000);
     return ()=>{
       console.log('useEffect-首次渲染-注销');
-      // clearInterval(id1);
-      // clearInterval(id2);
     }
   },[])
 
@@ -149,6 +143,6 @@ const HandleApp = ()=> {
   </Box>
 }
 
-// render()
+render()
 
 export default HandleApp;
