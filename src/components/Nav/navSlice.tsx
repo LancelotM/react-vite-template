@@ -3,10 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const navSlice = createSlice({
   name: "nav",
   initialState: {
-    navTabVal:()=>{
+    navTabVal:(()=>{
       let state = location.pathname === '/' ? 'home': location.pathname.replaceAll('/','');
       return state
-    },
+    })(),
   },
   reducers: {
     changeNavTabVal(state, action) {

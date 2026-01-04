@@ -9,7 +9,7 @@ import { changeNavTabVal } from "./navSlice";
 export default () =>{
   const navigate = useNavigate();
 
-  return <Tabs.Root defaultValue={store.getState().navSlice.navTabVal()}>
+  return <Tabs.Root defaultValue={store.getState().navSlice.navTabVal}>
     <Tabs.List justify='center' className="nav" >
       {
         routerArr.map((route)=>{
