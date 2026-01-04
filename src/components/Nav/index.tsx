@@ -18,13 +18,13 @@ export default () =>{
     <Tabs.List justify='center' className="nav" >
       {
         routerArr.map((route)=>{
-          return route.path && <Tabs.Trigger key={route.path} value={route.path}
+          return route.tabName && <Tabs.Trigger key={route.tabName} value={route.tabName}
             onClick={()=>{
-              store.dispatch(changeNavTabVal({navTabVal:route.path}))
+              store.dispatch(changeNavTabVal({navTabVal:route.tabName}))
               navigate(route.path, { preventScrollReset: true });
             }}>
-          {route.tabName}
-        </Tabs.Trigger>
+            {route.tabName}
+          </Tabs.Trigger>
         })
       }
     </Tabs.List>
