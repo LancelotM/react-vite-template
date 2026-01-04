@@ -1,3 +1,4 @@
+import Loading from "@/components/Loading";
 import { Box, Button, Flex, Spinner } from "@radix-ui/themes"
 import { useCallback, useEffect, useLayoutEffect, useState, useTransition } from "react"
 
@@ -22,7 +23,7 @@ export default () => {
   },[])
 
   return <Box>
-    childSuspense
+    childUseTransition
     <Button disabled={isPending} onClick={()=>{
       setVal('changeing')
       startTransition(async ()=>{
@@ -32,7 +33,7 @@ export default () => {
     }}>clickLoad</Button>
     <Box>{val}</Box>
     <Flex justify='center'>
-    {isPending ? <Spinner size="3" /> : null} 
+    {isPending ? <Loading /> : null} 
     </Flex>
   </Box>
 }
