@@ -1,5 +1,5 @@
 import { Box, Button, Link } from "@radix-ui/themes";
-import { useState } from "react";
+import { useState, type JSX } from "react";
 import { createBrowserRouter } from "react-router";
 import reactLogo from '@/assets/react.svg'
 import viteLogo from '/public/vite.svg'
@@ -36,7 +36,14 @@ export function NotFindEle() {
   </Box>
 }
 
-export const routerArr = [
+type routerType = {
+  path: string;
+  tabName: string;
+  Component: React.LazyExoticComponent<() => JSX.Element>;
+  secondPage?: boolean;
+}
+
+export const routerArr:routerType[] = [
   homeRoute,
   demoRoute,
   childDetailRoute,

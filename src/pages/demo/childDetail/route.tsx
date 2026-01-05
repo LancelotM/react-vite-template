@@ -6,4 +6,5 @@ export const childDetailRoute = {
     path: "/childDetail",
     tabName:'childDetail',
     Component: ChildDetail,
+    secondPage: true,
 }
