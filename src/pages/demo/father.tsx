@@ -1,6 +1,6 @@
 import { Box } from "@radix-ui/themes"
 import { useEffect, useLayoutEffect } from "react"
-import Child from "./childDetail"
+import Child from "./child"
 
 export default () => {
 

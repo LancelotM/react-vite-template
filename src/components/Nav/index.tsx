@@ -1,9 +1,9 @@
 import { routerArr } from "@/routes";
 import { Tabs } from "@radix-ui/themes"
 import './index.css'
-import { useNavigate } from "react-router";
 import { store } from "@/store";
-import { changeNavTabVal } from "./navSlice";
+import routeNavigate from "@/utils/routeNavigate";
+import { useNavigate } from "react-router";
 
 
 export default () =>{
@@ -13,10 +13,9 @@ export default () =>{
     <Tabs.List justify='center' className="nav" >
       {
         routerArr.map((route)=>{
-          return route.tabName && <Tabs.Trigger key={route.tabName} value={route.tabName}
+          return route.tabName && !route.secondPage && <Tabs.Trigger key={route.tabName} value={route.tabName}
             onClick={()=>{
-              store.dispatch(changeNavTabVal({navTabVal:route.tabName}))
-              navigate(route.path, { preventScrollReset: true });
+              routeNavigate(navigate,route)
             }}>
           {route.tabName}
         </Tabs.Trigger>
