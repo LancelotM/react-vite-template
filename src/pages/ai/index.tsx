@@ -1,7 +1,7 @@
 import Nav from "@/components/Nav"
 import { Box, Button, TextArea, Text } from "@radix-ui/themes"
 import axios, {  type AxiosResponse } from "axios"
-import { Suspense, useCallback, useEffect, useLayoutEffect, useState, useTransition } from "react"
+import { useCallback, useEffect, useLayoutEffect, useState, useTransition } from "react"
 import './index.less'
 import Loading from "@/components/Loading"
 

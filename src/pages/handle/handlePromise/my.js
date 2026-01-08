@@ -40,8 +40,11 @@ Promise.myall = function (proms){
 //     console.log('2s后啦');
 //   },2000)
 // })
+// const p4 = new Promise((resolve,reject)=>{
+//   reject('fail')
+// })
 
-// const allPromises = [1,2,p1,p2,p3];
+// const allPromises = [1,2,p1,p2,p3,p4];
 // Promise.all(allPromises).then((res)=>{
 //   console.log('all-res 全完事了',res);
 // },(err)=>{
