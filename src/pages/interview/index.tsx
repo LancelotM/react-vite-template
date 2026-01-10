@@ -3,10 +3,16 @@ import { Box, Tabs } from "@radix-ui/themes"
 import { useEffect, useLayoutEffect } from "react"
 import ES6 from "./ES6"
 import JavaScript from "./JavaScript"
+import CSS from "./CSS"
 
-const defaultValue = 'JavaScript'
+const defaultValue = 'CSS'
 
 const handleArr = [
+  {
+    key:'CSS',
+    tabName:'CSS系列',
+    Component:<CSS/>,
+  },
   {
     key:'JavaScript',
     tabName:'JavaScript系列',

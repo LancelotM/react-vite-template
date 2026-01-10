@@ -1,7 +1,7 @@
 import { Box } from "@radix-ui/themes"
 
 export default ()=> {
-  const ES6Arr = [
+  const JavaScriptArr = [
     //TODO （这个太综合了，需要自己是实现一下）置顶
     {
       href:'https://github.com/febobo/web-interview/issues/89',
@@ -46,7 +46,7 @@ export default ()=> {
   ]
   return <Box>
     {
-      ES6Arr.map((item)=>{
+      JavaScriptArr.map((item)=>{
         return <h2 key={item.text}>
           <a href={item.href} target='_blank'>{item.text}</a>
         </h2>
