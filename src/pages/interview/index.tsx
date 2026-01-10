@@ -5,10 +5,16 @@ import ES6 from "./ES6"
 import JavaScript from "./JavaScript"
 import CSS from "./CSS"
 import Webpack from "./webpack"
+import Http from "./http"
 
-const defaultValue = 'webpack'
+const defaultValue = 'http'
 
 const handleArr = [
+  {
+    key:'http',
+    tabName:'http系列',
+    Component:<Http/>,
+  },
   {
     key:'webpack',
     tabName:'webpack系列',
