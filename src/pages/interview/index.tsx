@@ -4,10 +4,16 @@ import { useEffect, useLayoutEffect } from "react"
 import ES6 from "./ES6"
 import JavaScript from "./JavaScript"
 import CSS from "./CSS"
+import Webpack from "./webpack"
 
-const defaultValue = 'CSS'
+const defaultValue = 'webpack'
 
 const handleArr = [
+  {
+    key:'webpack',
+    tabName:'webpack系列',
+    Component:<Webpack/>,
+  },
   {
     key:'CSS',
     tabName:'CSS系列',
