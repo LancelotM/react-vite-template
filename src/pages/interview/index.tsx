@@ -6,10 +6,16 @@ import JavaScript from "./JavaScript"
 import CSS from "./CSS"
 import Webpack from "./webpack"
 import Http from "./http"
+import Typescript from "./typescript"
 
-const defaultValue = 'http'
+const defaultValue = 'typescript'
 
 const handleArr = [
+  {
+    key:'typescript',
+    tabName:'typescript系列',
+    Component:<Typescript/>,
+  },
   {
     key:'http',
     tabName:'http系列',
