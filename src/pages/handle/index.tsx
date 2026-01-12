@@ -7,10 +7,16 @@ import HandlePromise from "./handlePromise"
 import HandleCurrying from "./handleCurrying"
 import HandleClosures from "./handleClosures"
 import HandleNew from "./handleNew"
+import HandleAsync from "./handleAsync"
 
 const defaultValue = 'Promise'
 
 const handleArr = [
+  {
+    key:'Async',
+    tabName:'Async',
+    Component:<HandleAsync/>,
+  },
   {
     key:'New',
     tabName:'New',
