@@ -8,10 +8,16 @@ import HandleCurrying from "./handleCurrying"
 import HandleClosures from "./handleClosures"
 import HandleNew from "./handleNew"
 import HandleAsync from "./handleAsync"
+import HandleInstanceof from "./handleInstanceof"
 
-const defaultValue = 'Promise'
+const defaultValue = 'Instanceof'
 
 const handleArr = [
+  {
+    key:'Instanceof',
+    tabName:'Instanceof',
+    Component:<HandleInstanceof/>,
+  },
   {
     key:'Async',
     tabName:'Async',
