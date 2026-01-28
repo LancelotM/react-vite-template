@@ -6,7 +6,9 @@ import viteLogo from '/public/vite.svg'
 import { homeRoute } from "@/pages/home/route";
 import { demoRoute } from "@/pages/demo/route";
 import { childDetailRoute } from "@/pages/demo/childDetail/route";
+import { handleRoute } from "@/pages/handle/route";
 import { aiRoute } from "@/pages/ai/route";
+import { interviewRoute } from "@/pages/interview/route";
 
 export function NotFindEle() {
   const [count, setCount] = useState(0)
@@ -46,6 +48,8 @@ export const routerArr:routerType[] = [
   homeRoute,
   demoRoute,
   childDetailRoute,
+  handleRoute,
+  interviewRoute,
   aiRoute,
 ]
 

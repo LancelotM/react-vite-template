@@ -1,6 +1,9 @@
 import { Box } from "@radix-ui/themes"
 import { useEffect, useLayoutEffect } from "react"
 import Child from "./child"
+import ChildUseTransition from "./childUseTransition"
+import ChildSuspense from "./childSuspense"
+import ChildUseDeferredValue from "./childUseDeferredValue"
 
 export default () => {
 
@@ -15,6 +18,9 @@ export default () => {
 
   return <Box>
     father
-    <Child />
+    <Child/>
+    <ChildUseTransition/>
+    <ChildSuspense/>
+    <ChildUseDeferredValue/>
   </Box>
 }

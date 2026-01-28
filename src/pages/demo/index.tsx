@@ -13,7 +13,6 @@ export default () => {
     console.log(`${new URL(import.meta.url).pathname}-useLayoutEffect`)
   },[])
 
-
   return <Box>
     <Nav/>
     demo

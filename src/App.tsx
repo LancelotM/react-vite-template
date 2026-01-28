@@ -9,7 +9,7 @@ function App() {
       <RouterProvider
           router={router}
         />
-      <ThemePanel/>
+      {/* <ThemePanel/> */}
     </Theme>
   )
 }
