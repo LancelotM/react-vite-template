@@ -37,24 +37,3 @@ function myInstanceof2(left, right) {
         left = left.__proto__;
     }
 }
-
-function checkIfInstance(obj, Constructor){
-  if(Constructor == null || Constructor === undefined){
-    return false;
-  }
-  while(obj){
-    const proto = Object.getPrototypeOf(obj);
-    if(proto === Constructor.prototype) return true;
-    obj = proto;
-  }
-  return false;
-}
-
-let func = () => checkIfInstance(new Date(), Date)
-console.log('func()1:',func());
-func = () => { class Animal {}; class Dog extends Animal {}; return checkIfInstance(new Dog(), Animal); }
-console.log('func()2:',func());
-func = () => checkIfInstance(Date, Date)
-console.log('func()3:',func());
-func = () => checkIfInstance(5, Number)
-console.log('func()4:',func());
